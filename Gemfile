@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 
 # For some unholy reason, we are using both sass and bootstrap in this tutorial
 gem 'bootstrap-sass', '~>3.3.6'
+gem 'bootstrap_form'
 
 # Whhhyyyyyy?   
 gem 'jquery-rails'
