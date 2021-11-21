@@ -22,6 +22,9 @@ gem 'bootstrap_form'
 # Whhhyyyyyy?   
 gem 'jquery-rails'
 
+# Pagesssss
+gem 'will_paginate', '~> 3.1.0'
+
 # Auth
 gem 'devise'
 
