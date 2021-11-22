@@ -1,6 +1,32 @@
+@media screen and (max-width: 550px) {
+    .page-title {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+    .new-post-button-parent {
+      text-align: center;
+      span {
+        display: none !important;
+      }
+    }
+    .post-button {
+      padding: 5px;
+    }
+    .category-item {
+      a {
+        padding: 5px;
+      }
+    }
+  }
+  
 @media screen and (max-width: 767px) {
     .pc-menu {
       display: none !important;
+    }
+    .single-post-list {
+        min-height: 65px;
+        max-height: 65px;
+        padding: 10px 0;
     }
     #side-menu {
         display: none !important;
