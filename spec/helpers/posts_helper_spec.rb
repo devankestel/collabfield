@@ -81,4 +81,30 @@ RSpec.describe PostsHelper, type: :helper do
       ) 
     end 
   end
+  context "#contact_user_partial_path" do 
+    before(:each) do
+      @current_user = create(:user, id: 1)
+      helper.stub(:current_user).and_return(@current_user) 
+    end
+    it "returns a contact user's partial path" do
+      helper.stub(:user_signed_in?).and_return(true)
+      assign(:post, create(:post, user_id: create(:user, id: 2).id))
+      expect(helper.contact_user_partial_path).to(
+        eq 'posts/show/contact_user'
+      ) 
+    end
+    it "returns an empty partial's path when post is from current user" do
+      helper.stub(:user_signed_in?).and_return(true)
+      assign(:post, create(:post, user_id: @current_user.id))
+      expect(helper.contact_user_partial_path).to(
+        eq 'shared/empty_partial'
+      ) 
+    end
+    it "returns login required path when no current user logged in" do
+      helper.stub(:user_signed_in?).and_return(false)
+      expect(helper.contact_user_partial_path).to(
+        eq 'posts/show/login_required'
+      )
+    end
+  end
 end
