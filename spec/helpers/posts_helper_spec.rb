@@ -107,4 +107,18 @@ RSpec.describe PostsHelper, type: :helper do
       )
     end
   end
+  context "#leave_message_partial_path" do
+    it "returns an already in touch partial path" do 
+      assign('message_has_been_sent', true)
+      expect(helper.leave_message_partial_path).to(
+        eq 'posts/show/contact_user/already_in_touch'
+      )
+    end
+    it "returns a message form partial path" do
+      assign('message_has_been_sent', false)
+      expect(helper.leave_message_partial_path).to(
+        eq 'posts/show/contact_user/message_form'
+      ) 
+    end 
+  end
 end
